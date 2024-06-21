@@ -1,0 +1,331 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    width: 310px;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    left: 750px;
+    top: 100px;
+    position: fixed;
+
+}
+
+.container{
+    font-family: "Poppins",sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+}
+.des-1{
+    opacity: 0;
+    margin: 10px 0;
+    transition: all 500ms linear;
+    pointer-events: none;
+    transform: translateY(20px);
+}
+.des-2{
+    position: absolute;
+    top: 160px;
+    display: flex;
+    opacity: 0;
+    gap: 10px;
+    line-height: 30px;
+    transition: all 500ms linear;
+    pointer-events: none;
+    transform: translateY(20px);
+}
+
+.btn{
+    position: absolute;
+    top: 300px;
+    left: 0px;
+    text-decoration: none;
+}
+[type="radio"]:checked,
+[type="radio"]:not(:checked){
+    position: absolute;
+    visibility: hidden;
+}
+
+#desc-1:checked ~ .des-1{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0px);
+}
+#desc-2:checked ~ .des-2{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0px);
+}
+.color-btn:checked + label,
+.color-btn:not(:checked)+label{
+    margin-top: -215px;
+    margin-right: 5px;
+    width: 40px;
+    height: 40px;
+    background-color: aqua;
+    border-radius: 4px;
+    border: 3px solid transparent;
+}
+.color-btn:checked + label {
+    border-color: #434343;
+    transform: scale(1.1);
+  }
+
+label.first-color {
+    background-image: url("./images/color1.jpg");
+  }
+  label.color-2 {
+    background-image: url("./images/color2.jpg");
+  }
+  label.color-3 {
+    background-image: url("./images/color3.jpg");
+  }
+  label.color-4 {
+    background-image: url("./images/color4.jpg");
+  }
+  label.color-5 {
+    background-image: url("./images/color5.jpg");
+  }
+  label.color-6 {
+    background-image: url("./images/color6.jpg");
+  }
+
+.img-wrap{
+    position: absolute;
+    right: 310px;
+    width: 500px;
+    height: 410px;
+    background-image: url(./images/chair1.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100%;
+    opacity: 0;
+    transition: all 250ms linear;
+    transition-delay: 300ms;
+}
+.for-color-1:checked ~ .img-wrap.chair-1{
+    opacity: 1;
+    animation: shake 0.8s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.img-wrap.chair-2{
+    background: url(./images/chair2.png);
+    background-size: 100%;
+
+}
+.for-color-2:checked ~ .img-wrap.chair-2{
+    opacity: 1;
+    animation: shake 0.8s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.img-wrap.chair-3{
+    background: url(./images/chair3.png);
+    background-size: 100%;
+
+}
+.for-color-3:checked ~ .img-wrap.chair-3{
+    opacity: 1;
+    animation: shake 0.8s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.img-wrap.chair-4{
+    background: url(./images/chair4.png);
+    background-size: 100%;
+
+}
+.for-color-4:checked ~ .img-wrap.chair-4{
+    opacity: 1;
+    animation: shake 0.8s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.img-wrap.chair-5{
+    background: url(./images/chair5.png);
+    background-size: 100%;
+
+}
+.for-color-5:checked ~ .img-wrap.chair-5{
+    opacity: 1;
+    animation: shake 0.8s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.img-wrap.chair-6{
+    background: url(./images/chair6.png);
+    background-size: 100%;
+
+}
+.for-color-6:checked ~ .img-wrap.chair-6{
+    opacity: 1;
+    animation: shake 0.8s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes shake {
+    10%,
+    90% {
+      transform: translate3d(-1px, 0, 0) rotate(-1deg);
+    }
+    20%,
+    80% {
+      transform: translate3d(2px, 0, 0) rotate(2deg);
+    }
+    30%,
+    50%,
+    70% {
+      transform: translate3d(-3px, 0, 0) rotate(-3deg);
+    }
+    40%,
+    60% {
+      transform: translate3d(3px, 0, 0) rotate(3deg);
+    }
+  }
+
+  .back-color{
+    z-index: -10;
+    position: absolute;
+    left: -750px;
+    top: -15%;
+    width: 100vw;
+    height: 110vh;
+    background-image: linear-gradient(196deg, #f1a9a9, #e66767);
+    transition: all 250ms linear;
+    transition-delay: 300ms;
+  }
+
+  .back-color.chair-2 {
+    background-image: linear-gradient(196deg, #4c4c4c, #262626);
+    opacity: 0;
+  }
+  .for-color-2:checked ~ .back-color.chair-2 {
+    opacity: 1;
+  }
+  .back-color.chair-3 {
+    background-image: linear-gradient(196deg, #8a9fb2, #5f7991);
+    opacity: 0;
+  }
+  .for-color-3:checked ~ .back-color.chair-3 {
+    opacity: 1;
+  }
+  .back-color.chair-4 {
+    background-image: linear-gradient(196deg, #97afc3, #6789a7);
+    opacity: 0;
+  }
+  .for-color-4:checked ~ .back-color.chair-4 {
+    opacity: 1;
+  }
+  .back-color.chair-5 {
+    background-image: linear-gradient(196deg, #afa6a0, #8c7f76);
+    opacity: 0;
+  }
+  .for-color-5:checked ~ .back-color.chair-5 {
+    opacity: 1;
+  }
+  .back-color.chair-6 {
+    background-image: linear-gradient(196deg, #aaadac, #838786);
+    opacity: 0;
+  }
+  .for-color-6:checked ~ .back-color.chair-6 {
+    opacity: 1;
+  }
+
+  .info-wrap{
+    position: absolute;
+    top: 50px;
+    width: 150px;
+}
+
+.btn{
+    font-family: "Poppins",sans-serif;
+    font-size: 18px;
+    font-weight: 550;
+    border: 1px solid black;
+    border-radius: 4px;
+    text-align: center;
+    width: 100%;
+    height: 40px;
+    color: white;
+    background-color: #944852;
+    padding-top: 5px;
+    transition: all 200ms linear 300ms;
+}
+.btn:hover {
+    box-shadow: 0 12px 35px 0 rgba(16, 39, 112, 0.25);
+    background-color: #333;
+  }
+  .for-color-2:checked ~ .info-wrap .btn {
+    background-color: #1a1a1a;
+  }
+  .for-color-3:checked ~ .info-wrap .btn {
+    background-color: #40566e;
+  }
+  .for-color-4:checked ~ .info-wrap .btn {
+    background-color: #5e89b2;
+  }
+  .for-color-5:checked ~ .info-wrap .btn {
+    background-color: #8c7f76;
+  }
+  .for-color-6:checked ~ .info-wrap .btn {
+    background-color: #5d6160;
+  }
+
+  .container h2{
+    font-weight: 800;
+    font-size: 34px;
+    line-height: 1.2;
+  }
+  .container p{
+    font-weight: 800;
+  }
+  .price{
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.2;
+  }
+  .price-cut{
+    text-decoration: line-through;
+    font-size: 20px;
+    opacity: 0.6;
+    padding-left: 15px;
+  }
+  h5{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .desc-sec:checked+label,
+  .desc-sec:not(:checked)+label{
+    border: none;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.2;
+    margin-right: 25px;
+    opacity: 0.5;
+    transition: all 200ms linear;
+  }
+  .desc-sec:checked + label {
+    opacity: 1;
+  }
+  .desc-sec:not(:checked) + label:hover {
+    opacity: 0.8;
+  }
+  .section-inline p{
+    font-weight: normal;
+  }
+  .section-inline p span {
+    font-size: 30px;
+    line-height: 1.1;
+  }
